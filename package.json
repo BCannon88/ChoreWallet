@@ -16,10 +16,7 @@
     "url": "https://github.com/Trayehunter1/ChoreWallet/issues"
   },
   "homepage": "https://github.com/Trayehunter1/ChoreWallet#readme",
-  "dependencies": {
-    "express": "^4.17.1",
-    "mongodb": "^4.1.1",
-    "react-router-dom": "^5.3.0",
-    "reactstrap": "^8.10.0"
+  "devDependencies": {
+    "concurrently": "^6.2.1"
   }
 }
