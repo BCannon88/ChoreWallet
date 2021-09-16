@@ -31,7 +31,7 @@ export default function Login() {
           <Button>Login</Button>
         </FormGroup>
         <em>
-          Not registered? <Button>Register</Button> 
+          Not registered? <Button>Sign Up</Button> 
         </em>
       </fieldset>
     </Form>
