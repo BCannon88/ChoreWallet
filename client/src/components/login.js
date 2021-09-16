@@ -9,12 +9,12 @@ export default function Login() {
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
 
-//   const loginSubmit = (e) => {
-//     e.preventDefault();
-//     login(email, password)
-//       .then(() => history.push("/"))
-//       .catch(() => alert("Invalid email or password"));
-//   };
+  // const loginSubmit = (e) => {
+  //   e.preventDefault();
+  //   login(email, password)
+  //     .then(() => history.push("/"))
+  //     .catch(() => alert("Invalid email or password"));
+  // };
 
   return (
     <Form>
