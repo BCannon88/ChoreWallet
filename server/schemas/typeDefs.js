@@ -26,6 +26,11 @@ const typeDefs = gql`
     name: String
   }
 
+  type Auth {
+    token: ID!
+    user: User
+  }
+
   type Query {
     chores(email: String): [Chore]
     chore(_id: ID!): Chore
@@ -33,6 +38,11 @@ const typeDefs = gql`
     choreLocation(_id: ID!): ChoreLocation
     users: [User]
     user(_id: ID!): User
+  }
+
+  type Mutation {
+    addUser(firstName: String!, lastName: String!, email: String!, password: String!): Auth
+    login(email: String!, password: String!): Auth
   }
 `;
 
