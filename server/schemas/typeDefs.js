@@ -3,40 +3,23 @@ const { gql } = require('apollo-server-express');
 
 // create our typeDefs
 const typeDefs = gql`
-  type User {
-    _id: ID
-    firstName: String!
-    lastName: String!
-    email: String!
-    password: String!
-    chores: [Chore]
-  }
 
   type Chore {
     _id: ID
-    name: String!
+    name: String
     description: String
-    price: Float
-    choreLocation: ChoreLocation
+    price: Int
   }
 
-  type Auth {
-    token: ID!
-    user: User
+  type ChoreLocation {
+    _id: ID
+    name: String
   }
 
   type Query {
+    chores(email: String): [Chore]
+    chore(_id: ID!): Chore
     choreLocations: [ChoreLocation]
-    chores:(location: ID, name: String): [Chore]
-    user: User
-    order(_id: ID!): Order
-    # checkout(chores: [ID]!): Checkout
-  }
-
-  type Mutation {
-    addUser(firstName: String!, lastName: String!, email: String!, password: String!): Auth
-    addOrder(chores: [ID]!): Order
-    login(email: String!, password: String!): Auth
   }
 `;
 
