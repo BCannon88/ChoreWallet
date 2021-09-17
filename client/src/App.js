@@ -1,19 +1,33 @@
 import React from "react";
-import {Router} from "react-router-dom";
+import { BrowserRouter, Switch, Route} from "react-router-dom";
 import Login from "./components/login"
+import Homepage from "./components/homepage";
+import Navigation from "./components/navbar";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './App.css'
+
 
 export const App = () => {
 
   return (
-    <Router>
+    <BrowserRouter>
       <div>
+        <Navigation/>
+        <Switch>
 
-          <div path="/login">
-            <Login />
-          </div>
+            <Route exact path="/login">
+              <Login />
+            </Route>
+
+            <Route exact path="/">
+              <Homepage/>
+            </Route>
+
+        </Switch>
 
       </div>
-    </Router>
+
+    </BrowserRouter>
   )
 }
 
