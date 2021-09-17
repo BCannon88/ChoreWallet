@@ -21,12 +21,12 @@ const resolvers = {
     // get all users
     users: async () => {
       return User.find()
-        // .select('-__v -password')
+        .select('-__v -password')
         .populate('chores');
     },
     user: async (parent, { email }) => {
       return User.findOne({ email })
-        // .select('-__v -password')
+        .select('-__v -password')
         .populate('chores')
     }
   },
