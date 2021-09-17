@@ -4,11 +4,21 @@ const { gql } = require('apollo-server-express');
 // create our typeDefs
 const typeDefs = gql`
 
+  type User {
+    _id: ID
+    firstName: String!
+    lastName: String!
+    email: String!
+    password: String!
+    chores: [Chore]
+  }
+
   type Chore {
     _id: ID
     name: String
     description: String
     price: Int
+    choreLocation: ChoreLocation
   }
 
   type ChoreLocation {
@@ -20,6 +30,9 @@ const typeDefs = gql`
     chores(email: String): [Chore]
     chore(_id: ID!): Chore
     choreLocations: [ChoreLocation]
+    choreLocation(_id: ID!): ChoreLocation
+    users: [User]
+    user(_id: ID!): User
   }
 `;
 

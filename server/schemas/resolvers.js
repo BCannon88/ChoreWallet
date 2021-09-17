@@ -14,7 +14,22 @@ const resolvers = {
     },
     choreLocations: async () => {
       return ChoreLocation.find();
+    },
+    choreLocation: async (parent, { _id }) => {
+      return ChoreLocation.findOne({ _id });
+    },
+    // get all users
+    users: async () => {
+      return User.find()
+        .select('-__v -password')
+        .populate('chores');
+    },
+    user: async (parent, { email }) => {
+      return User.findOne({ email })
+        .select('-__v -password')
+        .populate('chores')
     }
+
   }
 };
 
