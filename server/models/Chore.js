@@ -23,6 +23,6 @@ const choreSchema = new Schema({
     }
 });
 
-const Product = mongoose.model('Chore', choreSchema);
+const Chore = mongoose.model('Chore', choreSchema);
 
 module.exports = Chore;
