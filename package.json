@@ -19,5 +19,8 @@
   "homepage": "https://github.com/Trayehunter1/ChoreWallet#readme",
   "devDependencies": {
     "concurrently": "^6.2.1"
+  },
+  "dependencies": {
+    "if-env": "^1.0.4"
   }
 }
