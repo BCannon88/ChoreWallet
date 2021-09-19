@@ -1,7 +1,8 @@
 const { AuthenticationError } = require('apollo-server-express');
-const { User, Chore, ChoreLocation } = require('../models');
+const { User, Chore, ChoreLocation, Order } = require('../models');
 const { signToken } = require('../utils/auth');
-// const stripe = require('stripe')('sk_test_4eC39HqLyjWDarjtT1zdp7dc');
+const stripe = require('stripe')('sk_test_4eC39HqLyjWDarjtT1zdp7dc');
+
 
 const resolvers = {
   Query: {
@@ -28,6 +29,42 @@ const resolvers = {
       return User.findOne({ email })
         .select('-__v -password')
         .populate('chores')
+    },
+    checkout: async (parent, args, context) => {
+      const order = new Order({ chores: args.chores });
+      const { chores } = await order.populate('chores').execPopulate();
+      const line_items = [];
+
+      for (let i = 0; i < chores.length; i++) {
+        // generate chore id
+        const chore = await stripe.chores.create({
+          name: chores[i].name,
+          description: chores[i].description
+        });
+
+        // generate price id using the chore id
+        const price = await stripe.prices.create({
+          chore: chore.id,
+          unit_amount: chores[i].price * 100,
+          currency: 'usd',
+        });
+
+        // add price id to the line items array
+        line_items.push({
+          price: price.id,
+          quantity: 1
+        });
+      }
+
+      const session = await stripe.checkout.sessions.create({
+        payment_method_types: ['card'],
+        line_items,
+        mode: 'payment',
+        success_url: 'https://example.com/success?session_id={CHECKOUT_SESSION_ID}',
+        cancel_url: 'https://example.com/cancel'
+      });
+
+      return { session: session.id };
     }
   },
   Mutation: {
