@@ -32,6 +32,7 @@ const typeDefs = gql`
   }
 
   type Query {
+    me: User
     chores(email: String): [Chore]
     chore(_id: ID!): Chore
     choreLocations: [ChoreLocation]

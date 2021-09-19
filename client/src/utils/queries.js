@@ -1,36 +1,75 @@
 import gql from 'graphql-tag';
 
 export const QUERY_CHORE = gql`
-  query thoughts($username: String) {
-    thoughts(username: $username) {
+  query chores($email: String) {
+    chores(email: $email) {
       _id
-      thoughtText
-      createdAt
-      username
-      reactionCount
-      reactions {
-        _id
-        createdAt
-        username
-        reactionBody
-      }
+      name
+      description
+      price
+      choreLocation
     }
   }
 `;
 
 export const QUERY_CHORES = gql`
-  query thought($id: ID!) {
-    thought(_id: $id) {
+  query chores($id: ID!) {
+    chores(_id: $id) {
       _id
-      thoughtText
-      createdAt
-      username
-      reactionCount
-      reactions {
+      name
+      description
+      price
+      choreLocation
+    }
+  }
+`;
+
+export const QUERY_USER = gql`
+  query user($email: String!) {
+    user(email: $email) {
+      _id
+      firstName
+      lastName
+      email
+      chores {
         _id
-        createdAt
-        username
-        reactionBody
+        name
+        description
+        price
+        choreLocation
+      }
+    }
+  }
+`;
+
+export const QUERY_ME = gql`
+  {
+    me {
+      _id
+      firstName
+      lastName
+      email
+      chores {
+        _id
+        name
+        description
+        price
+        choreLocation
+      }
+    }
+  }
+`;
+
+export const QUERY_ME_BASIC = gql`
+  {
+    me {
+      _id
+      firstName
+      lastName
+      email
+      chores {
+        _id
+        name
       }
     }
   }
