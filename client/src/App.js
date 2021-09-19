@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { BrowserRouter, Switch, Route} from "react-router-dom";
 import { 
   ApolloProvider, 
@@ -7,12 +7,15 @@ import {
   createHttpLink 
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
-import Login from "./components/login"
+import Login from "./components/login";
 import Homepage from "./components/homepage";
 import Navigation from "./components/navbar";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './App.css'
-import Signup from "./components/signup";
+import './App.css';
+// import ShowCalendar from './components/calendar';
+import Calendar from 'react-calendar';
+import 'react-calendar/dist/Calendar.css';
+import Signup from './components/signup';
 
 const httpLink = createHttpLink({
   uri: '/graphql',
@@ -35,12 +38,15 @@ const client = new ApolloClient({
 
 export const App = () => {
 
+  // const [value, onChange] = useState(new Date())
+
   return (
     <ApolloProvider client={client}>
     <BrowserRouter>
       <div>
         <Navigation/>
-        <div>
+         {/* <Calendar value={value} onChange= {onChange} className="react-calendar" 
+         />   */}
         <Switch>
 
             <Route exact path="/login">
@@ -56,8 +62,15 @@ export const App = () => {
               <Homepage/>
             </Route>
 
+           <Route exact path="/Calendar">
+             <Calendar 
+                // value={value}
+                // onChange={onChange}
+              />
+                {/* <ShowCalendar /> */}
+            </Route> 
+
         </Switch>
-        </div>
         {/* <Footer /> */}
       </div>
     </BrowserRouter>
