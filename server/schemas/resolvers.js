@@ -19,6 +19,17 @@ const resolvers = {
     choreLocation: async (parent, { _id }) => {
       return ChoreLocation.findOne({ _id });
     },
+    me: async (parent, args, context) => {
+      if (context.user) {
+        const userData = await User.findOne({ _id: context.user._id })
+          .select('-__v -password')
+          .populate('chores')
+
+        return userData;
+      }
+
+      throw new AuthenticationError('Not logged in');
+    },
     // get all users
     users: async () => {
       return User.find()

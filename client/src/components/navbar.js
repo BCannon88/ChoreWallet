@@ -10,9 +10,10 @@ function Navigation(props) {
                 <Container>
                 <Navbar.Brand href="/">ChoreWallet</Navbar.Brand>
                 <Nav className="me-auto">
-                <Nav.Link href="#Calender">Calender</Nav.Link>
+                <Nav.Link href="/Calender">Calender</Nav.Link>
                 <Nav.Link href="#features">Learn More!</Nav.Link>
                 <Nav.Link href="/login">Login</Nav.Link>
+                <Nav.Link href="/signup">Signup</Nav.Link>
                 </Nav>
                 </Container>
             </Navbar>
