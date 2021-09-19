@@ -40,6 +40,7 @@ export const App = () => {
     <BrowserRouter>
       <div>
         <Navigation/>
+        <div>
         <Switch>
 
             <Route exact path="/login">
@@ -56,13 +57,12 @@ export const App = () => {
             </Route>
 
         </Switch>
-
+        </div>
+        {/* <Footer /> */}
       </div>
-
     </BrowserRouter>
     </ApolloProvider>
   )
 }
-
 
 export default App;
