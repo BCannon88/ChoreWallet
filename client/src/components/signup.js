@@ -1,4 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
+import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
+import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 import { ADD_USER } from '../utils/mutations';
 import Auth from '../utils/auth';
@@ -33,61 +35,37 @@ const Signup = () => {
       }
     };
 
-  return (
-    <div>
-    <main className='flex-row justify-center mb-4'>
-      <div className='col-12 col-md-6'>
-        <div className='card'>
-          <h4 className='card-header'>Sign Up</h4>
-          <div className='card-body'>
-            <form onSubmit={handleFormSubmit}>
-              <input
-                className='form-input'
-                placeholder='First name'
-                name='firstName'
-                type='firstName'
-                id='firstName'
-                value={formState.firstName}
-                onChange={handleChange}
-              />
-              <input
-                className='form-input'
-                placeholder='Last name'
-                name='lastName'
-                type='lastName'
-                id='lastName'
-                value={formState.lastName}
-                onChange={handleChange}
-              />
-              <input
-                className='form-input'
-                placeholder='Email'
-                name='email'
-                type='email'
-                id='email'
-                value={formState.email}
-                onChange={handleChange}
-              />
-              <input
-                className='form-input'
-                placeholder='******'
-                name='password'
-                type='password'
-                id='password'
-                value={formState.password}
-                onChange={handleChange}
-              />
-              <button className='btn d-block w-100' type='submit'>
-                Submit
-              </button>
-            </form>
-            {error && <div>Signup failed</div>}
-          </div>
-        </div>
+    return (
+      <div>
+      <Form onSubmit={handleFormSubmit}>
+        <fieldset>
+        <FormGroup>
+            <Label for="firstName">First Name</Label>
+            <Input id="firstName" type="text" autoFocus onChange={handleChange} />
+          </FormGroup>
+          <FormGroup>
+            <Label for="lastName">Last Name</Label>
+            <Input id="lastName" type="text" autoFocus onChange={handleChange} />
+          </FormGroup>
+          <FormGroup>
+            <Label for="email">Email</Label>
+            <Input id="email" type="text" autoFocus onChange={handleChange} />
+          </FormGroup>
+          <FormGroup>
+            <Label for="password">Password</Label>
+            <Input id="password" type="password" onChange={handleChange} />
+          </FormGroup>
+          <FormGroup>
+            <Button>Signup</Button>
+          </FormGroup>
+          <em>
+            Already registered? <Link to="/login"><Button>Login</Button></Link>
+          </em>
+        </fieldset>
+      </Form>
+      {error && <div>Signup failed</div>}
       </div>
-    </main>
-    </div>
-  );
-};
+    );
+  }
 
 export default Signup;
