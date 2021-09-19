@@ -39,11 +39,22 @@ const typeDefs = gql`
     choreLocation(_id: ID!): ChoreLocation
     users: [User]
     user(_id: ID!): User
+    checkout(chores: [ID]!): Checkout
   }
 
   type Mutation {
     addUser(firstName: String!, lastName: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
+  }
+
+  type Checkout {
+  session: ID
+}
+
+type Order {
+    _id: ID
+    choreCompletionDate: String
+    chores: [Chore]
   }
 `;
 
