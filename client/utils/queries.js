@@ -1,47 +1,37 @@
-import { gql } from '@apollo/client';
+import gql from 'graphql-tag';
 
-export const QUERY_CHORES = gql`
-  query chores {
-    chores {
+export const QUERY_CHORE = gql`
+  query thoughts($username: String) {
+    thoughts(username: $username) {
       _id
-      name
-      description
-      price
-      choreLocation
-    }
-  }
-`;
-
-export const QUERY_USERS = gql`
-  query users {
-    users {
-      _id
-      firstName
-      lastName
-      email
-      password
-      chores
+      thoughtText
+      createdAt
+      username
+      reactionCount
+      reactions {
+        _id
+        createdAt
+        username
+        reactionBody
+      }
     }
   }
 `;
 
 export const QUERY_CHORES = gql`
-  query chores {
-    chores {
+  query thought($id: ID!) {
+    thought(_id: $id) {
       _id
-      name
-      description
-      price
-      choreLocation
-    }
-  }
-`;
-
-export const QUERY_CHORELOCATIONS = gql`
-  query choreLocation {
-    choreLocations {
-      _id
-      name
+      thoughtText
+      createdAt
+      username
+      reactionCount
+      reactions {
+        _id
+        createdAt
+        username
+        reactionBody
+      }
     }
   }
 `;
