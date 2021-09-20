@@ -12,7 +12,7 @@ import Homepage from "./components/homepage";
 import Navigation from "./components/navbar";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
-// import ShowCalendar from './components/calendar';
+import moment from 'moment';
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
 import Signup from './components/signup';
@@ -38,7 +38,7 @@ const client = new ApolloClient({
 
 export const App = () => {
 
-  // const [value, onChange] = useState(new Date())
+   const [value, onChange] = useState(new Date())
 
   return (
     <ApolloProvider client={client}>
@@ -64,10 +64,10 @@ export const App = () => {
 
            <Route exact path="/Calendar">
              <Calendar 
-                // value={value}
-                // onChange={onChange}
+                value={value}
+                onChange={onChange}
               />
-                {/* <ShowCalendar /> */}
+                <p>Current selected date is <b>{moment(dateState).format('MMMM Do YYYY')}</b></p>
             </Route> 
 
         </Switch>
