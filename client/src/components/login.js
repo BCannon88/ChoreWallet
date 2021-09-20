@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 import { LOGIN_USER } from '../utils/mutations';
 import Auth from '../utils/auth';
-
+import './login.css';
 
 
 export default function Login() {
@@ -45,26 +45,26 @@ export default function Login() {
   };
 
   return (
-    <div>
-    <Form onSubmit={handleFormSubmit}>
-      <fieldset>
-        <FormGroup>
-          <Label for="email">Email</Label>
-          <Input id="email" type="text" autoFocus onChange={handleChange} />
-        </FormGroup>
-        <FormGroup>
-          <Label for="password">Password</Label>
-          <Input id="password" type="password" onChange={handleChange} />
-        </FormGroup>
-        <FormGroup>
-          <Button>Login</Button>
-        </FormGroup>
-        <em>
-          Not registered? <Link to="/signup"><Button>Signup</Button></Link>
-        </em>
-      </fieldset>
-    </Form>
-    {error && <div>Login failed</div>}
+    <div className='loginImage'> 
+      <Form onSubmit={handleFormSubmit}>
+        <fieldset>
+          <FormGroup>
+            <Label className='margin' for="email">Email</Label>
+            <Input id="email" type="text" autoFocus onChange={handleChange} />
+          </FormGroup>
+          <FormGroup>
+            <Label className='margin' for="password">Password</Label>
+            <Input id="password" type="password" onChange={handleChange} />
+          </FormGroup>
+          <FormGroup className='margin'>
+            <Button>Login</Button>
+          </FormGroup>
+          <em>
+            Not registered? <Link className='margin' to="/signup"><Button>Signup</Button></Link>
+          </em>
+        </fieldset>
+      </Form>
+      {error && <div>Login failed</div>}
     </div>
   );
 }

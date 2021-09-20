@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 import { ADD_USER } from '../utils/mutations';
 import Auth from '../utils/auth';
+import './signup.css';
+
 
 const Signup = () => {
     const [formState, setFormState] = useState({ firstName: '', lastName: '', email: '', password: '' });
@@ -36,28 +38,28 @@ const Signup = () => {
     };
 
     return (
-      <div>
+      <div className='signupImage'>
       <Form onSubmit={handleFormSubmit}>
         <fieldset>
-        <FormGroup>
-            <Label for="firstName">First Name</Label>
-            <Input id="firstName" type="text" autoFocus onChange={handleChange} />
-          </FormGroup>
           <FormGroup>
-            <Label for="lastName">Last Name</Label>
-            <Input id="lastName" type="text" autoFocus onChange={handleChange} />
-          </FormGroup>
-          <FormGroup>
-            <Label for="email">Email</Label>
-            <Input id="email" type="text" autoFocus onChange={handleChange} />
-          </FormGroup>
-          <FormGroup>
-            <Label for="password">Password</Label>
-            <Input id="password" type="password" onChange={handleChange} />
-          </FormGroup>
-          <FormGroup>
-            <Button>Signup</Button>
-          </FormGroup>
+              <Label for="firstName">First Name</Label>
+              <Input id="firstName" type="text" autoFocus onChange={handleChange} />
+            </FormGroup>
+            <FormGroup>
+              <Label for="lastName">Last Name</Label>
+              <Input id="lastName" type="text" autoFocus onChange={handleChange} />
+            </FormGroup>
+            <FormGroup>
+              <Label for="email">Email</Label>
+              <Input id="email" type="text" autoFocus onChange={handleChange} />
+            </FormGroup>
+            <FormGroup>
+              <Label for="password">Password</Label>
+              <Input id="password" type="password" onChange={handleChange} />
+            </FormGroup>
+            <FormGroup>
+              <Button>Signup</Button>
+            </FormGroup>
           <em>
             Already registered? <Link to="/login"><Button>Login</Button></Link>
           </em>
