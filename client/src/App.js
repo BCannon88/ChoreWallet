@@ -7,15 +7,18 @@ import {
   createHttpLink
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
-import Login from "./components/login";
-import Homepage from "./components/homepage";
-import Navigation from "./components/navbar";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './App.css';
-import moment from 'moment';
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
+import moment from 'moment';
+import './App.css';
+
+import Navigation from "./components/navbar";
+import Homepage from "./components/homepage";
+import Login from "./components/login";
 import Signup from './components/signup';
+import Chores from './components/chores';
+
 
 const httpLink = createHttpLink({
   uri: '/graphql',
@@ -55,6 +58,10 @@ export const App = () => {
 
             <Route exact path="/signup">
               <Signup />
+            </Route>
+
+            <Route exact path="/chores">
+              <Chores />
             </Route>
 
 

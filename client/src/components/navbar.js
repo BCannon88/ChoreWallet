@@ -11,7 +11,7 @@ function Navigation(props) {
                 <Navbar.Brand href="/">ChoreWallet</Navbar.Brand>
                 <Nav className="me-auto">
                 <Nav.Link href="/calendar">Calendar</Nav.Link>
-                <Nav.Link href="#features">Learn More!</Nav.Link>
+                <Nav.Link href="/chores">Chores</Nav.Link>
                 <Nav.Link href="/login">Login</Nav.Link>
                 <Nav.Link href="/signup">Signup</Nav.Link>
                 </Nav>
