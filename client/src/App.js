@@ -1,5 +1,5 @@
-import React from "react";
-//import React, { useState } from "react";
+// import React from "react";
+import React, { useState } from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import {
   ApolloProvider,
@@ -39,7 +39,7 @@ const client = new ApolloClient({
 
 export const App = () => {
 
-   const [value, onChange] = useState(new Date())
+  const [dateState, setDateState] = useState(new Date())
 
   return (
     <ApolloProvider client={client}>
@@ -62,12 +62,12 @@ export const App = () => {
             <Route exact path="/">
               <Homepage />
             </Route>
-           <Route exact path="/Calendar">
-             <Calendar 
-                value={value}
-                onChange={onChange}
+            <Route exact path="/Calendar">
+              <Calendar
+                value={dateState}
+                onChange={setDateState}
               />
-                <p>Current selected date is <b>{moment(dateState).format('MMMM Do YYYY')}</b></p>
+              <p>Current selected date is <b>{moment(dateState).format('MMMM Do YYYY')}</b></p>
             </Route>
 
           </Switch>
