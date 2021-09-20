@@ -2,6 +2,8 @@ import React from 'react';
 import Navbar from 'react-bootstrap/Navbar'
 import Container from 'react-bootstrap/Container'
 import Nav from 'react-bootstrap/Nav'
+import greenPic from '../assets/loginlogo.png';
+import './navBar.css'
 
 function Navigation(props) {
     return (
@@ -16,6 +18,8 @@ function Navigation(props) {
                 <Nav.Link href="/signup">Signup</Nav.Link>
                 </Nav>
                 </Container>
+                
+                <img className='navLogo' src={greenPic} alt='navLogo'/>
             </Navbar>
         </div>
     );
