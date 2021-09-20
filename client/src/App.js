@@ -63,7 +63,7 @@ export const App = () => {
               <Homepage />
             </Route>
 
-            <Route exact path="/Calendar">
+            <Route exact path="/calendar">
               <Calendar
               // value={value}
               // onChange={onChange}
