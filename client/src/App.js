@@ -1,10 +1,11 @@
-import React, { useState } from "react";
-import { BrowserRouter, Switch, Route} from "react-router-dom";
-import { 
-  ApolloProvider, 
-  ApolloClient, 
-  InMemoryCache, 
-  createHttpLink 
+import React from "react";
+//import React, { useState } from "react";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
+import {
+  ApolloProvider,
+  ApolloClient,
+  InMemoryCache,
+  createHttpLink
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 import Login from "./components/login";
@@ -42,12 +43,12 @@ export const App = () => {
 
   return (
     <ApolloProvider client={client}>
-    <BrowserRouter>
-      <div>
-        <Navigation/>
-         {/* <Calendar value={value} onChange= {onChange} className="react-calendar" 
+      <BrowserRouter>
+        <div>
+          <Navigation />
+          {/* <Calendar value={value} onChange= {onChange} className="react-calendar" 
          />   */}
-        <Switch>
+          <Switch>
 
             <Route exact path="/login">
               <Login />
@@ -59,21 +60,20 @@ export const App = () => {
 
 
             <Route exact path="/">
-              <Homepage/>
+              <Homepage />
             </Route>
-
            <Route exact path="/Calendar">
              <Calendar 
                 value={value}
                 onChange={onChange}
               />
                 <p>Current selected date is <b>{moment(dateState).format('MMMM Do YYYY')}</b></p>
-            </Route> 
+            </Route>
 
-        </Switch>
-        {/* <Footer /> */}
-      </div>
-    </BrowserRouter>
+          </Switch>
+          {/* <Footer /> */}
+        </div>
+      </BrowserRouter>
     </ApolloProvider>
   )
 }
