@@ -3,7 +3,7 @@ import Calendar from 'react-calendar';
 // import moment from 'moment';
 
 
-export const ShowCalendar = () => {
+const ShowCalendar = () => {
     
 
     return (
