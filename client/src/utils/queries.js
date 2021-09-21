@@ -1,6 +1,6 @@
 import gql from 'graphql-tag';
 
-export const QUERY_CHORE = gql`
+export const QUERY_CHORES = gql`
   query chores($email: String) {
     chores(email: $email) {
       _id
@@ -8,18 +8,26 @@ export const QUERY_CHORE = gql`
       description
       price
       choreLocation
+      {
+        _id
+        name
+      }
     }
   }
 `;
 
-export const QUERY_CHORES = gql`
-  query chores($id: ID!) {
+export const QUERY_CHORE = gql`
+  query chore($id: ID!) {
     chores(_id: $id) {
       _id
       name
       description
       price
       choreLocation
+      {
+        _id
+        name
+      }
     }
   }
 `;

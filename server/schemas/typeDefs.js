@@ -47,6 +47,7 @@ const typeDefs = gql`
     updateUser(firstName: String, lastName: String, email: String, password: String): User
     deleteUser(_id: ID!): User
     login(email: String!, password: String!): Auth
+    addChore(_id: ID!): User
 
   }
 

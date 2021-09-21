@@ -5,7 +5,7 @@ import { useQuery } from '@apollo/client';
 const Chores = () => {
     // use use Query hook to make query request
     const { data } = useQuery(QUERY_CHORES);
-
+    console.log(data);
     const chores = data?.chores || [];
 
   return (
