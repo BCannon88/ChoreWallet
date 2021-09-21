@@ -18,6 +18,7 @@ import Homepage from "./components/homepage";
 import Login from "./components/login";
 import Signup from './components/signup';
 import Chores from './components/chores';
+import Stripe from "./components/Stripe";
 
 
 
@@ -50,6 +51,7 @@ export const App = () => {
       <BrowserRouter>
         <div>
           <Navigation />
+          <Stripe />
           {/* <Calendar value={value} onChange= {onChange} className="react-calendar" 
          />   */}
           <Switch>
@@ -71,8 +73,8 @@ export const App = () => {
               <Homepage />
             </Route>
 
-           <Route exact path="/calendar">
-             <Calendar 
+            <Route exact path="/calendar">
+              <Calendar
                 value={dateState}
                 onChange={setDateState}
               />
