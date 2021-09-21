@@ -39,19 +39,19 @@ function Signup(props) {
         <fieldset>
           <FormGroup>
               <Label for="firstName">First Name</Label>
-              <Input id="firstName" type="text" autoFocus onChange={handleChange} />
+              <Input id="firstName" name="firstName" type="text" autoFocus onChange={handleChange} />
             </FormGroup>
             <FormGroup>
               <Label for="lastName">Last Name</Label>
-              <Input id="lastName" type="text" autoFocus onChange={handleChange} />
+              <Input id="lastName" name="lastName" type="text" autoFocus onChange={handleChange} />
             </FormGroup>
             <FormGroup>
               <Label for="email">Email</Label>
-              <Input id="email" type="text" autoFocus onChange={handleChange} />
+              <Input id="email" name="email" type="text" autoFocus onChange={handleChange} />
             </FormGroup>
             <FormGroup>
               <Label for="password">Password</Label>
-              <Input id="password" type="password" onChange={handleChange} />
+              <Input id="password" name="password" type="password" onChange={handleChange} />
             </FormGroup>
             <FormGroup>
               <Button>Signup</Button>
