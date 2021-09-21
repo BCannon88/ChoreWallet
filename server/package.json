@@ -12,6 +12,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@stripe/stripe-js": "^1.18.0",
     "apollo-server-express": "^3.3.0",
     "bcrypt": "^5.0.1",
     "express": "^4.17.1",
