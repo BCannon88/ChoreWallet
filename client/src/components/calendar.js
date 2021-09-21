@@ -5,7 +5,7 @@ import 'react-calendar/dist/Calendar.css'
 // import moment from 'moment';
 
 
-export const ShowCalendar = () => {
+const ShowCalendar = () => {
     
 
     return (

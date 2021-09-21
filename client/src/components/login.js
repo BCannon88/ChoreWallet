@@ -6,7 +6,6 @@ import { LOGIN_USER } from '../utils/mutations';
 import Auth from '../utils/auth';
 import './login.css';
 
-
 export default function Login() {
   //const history = useHistory();
 
