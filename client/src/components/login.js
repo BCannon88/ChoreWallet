@@ -49,11 +49,11 @@ export default function Login() {
         <fieldset>
           <FormGroup>
             <Label className='margin' for="email">Email</Label>
-            <Input id="email" type="text" autoFocus onChange={handleChange} />
+            <Input id="email" name="email" type="text" autoFocus onChange={handleChange} />
           </FormGroup>
           <FormGroup>
             <Label className='margin' for="password">Password</Label>
-            <Input id="password" type="password" onChange={handleChange} />
+            <Input id="password" name="password" type="password" onChange={handleChange} />
           </FormGroup>
           <FormGroup className='margin'>
             <Button>Login</Button>
