@@ -18,6 +18,7 @@ import Homepage from "./components/homepage";
 import Login from "./components/login";
 import Signup from './components/signup';
 import Chores from './components/chores';
+import Stripe from "./components/Stripe";
 
 
 
@@ -43,13 +44,14 @@ const client = new ApolloClient({
 
 export const App = () => {
 
-   const [dateState, setDateState] = useState(new Date())
+  const [dateState, setDateState] = useState(new Date())
 
   return (
     <ApolloProvider client={client}>
       <BrowserRouter>
         <div>
           <Navigation />
+          <Stripe />
           {/* <Calendar value={value} onChange= {onChange} className="react-calendar" 
          />   */}
           <Switch>
@@ -70,12 +72,13 @@ export const App = () => {
             <Route exact path="/">
               <Homepage />
             </Route>
-           <Route exact path="/calendar">
-             <Calendar 
+
+            <Route exact path="/calendar">
+              <Calendar
                 value={dateState}
                 onChange={setDateState}
               />
-                <p>Current selected date is <b>{moment(dateState).format('MMMM Do YYYY')}</b></p>
+              <p>Current selected date is <b>{moment(dateState).format('MMMM Do YYYY')}</b></p>
             </Route>
 
           </Switch>

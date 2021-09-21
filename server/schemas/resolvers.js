@@ -42,20 +42,21 @@ const resolvers = {
         .populate('chores')
     },
     checkout: async (parent, args, context) => {
+      const url = new URL(context.headers.referer).origin;
       const order = new Order({ chores: args.chores });
-      const { chores } = await order.populate('chores').execPopulate();
+      const { chores } = await order.populate('chores');
       const line_items = [];
 
       for (let i = 0; i < chores.length; i++) {
         // generate chore id
-        const chore = await stripe.chores.create({
+        const chore = await stripe.products.create({
           name: chores[i].name,
           description: chores[i].description
         });
 
         // generate price id using the chore id
         const price = await stripe.prices.create({
-          chore: chore.id,
+          product: chore.id,
           unit_amount: chores[i].price * 100,
           currency: 'usd',
         });
@@ -71,8 +72,8 @@ const resolvers = {
         payment_method_types: ['card'],
         line_items,
         mode: 'payment',
-        success_url: 'https://example.com/success?session_id={CHECKOUT_SESSION_ID}',
-        cancel_url: 'https://example.com/cancel'
+        success_url: `${url}/success?session_id=cs_test_b1U9jlWNIvAtiylyLVo93ooFItQnPovcuWJ652RCqxjNKATsh5UsTLZaOx`,
+        cancel_url: `${url}/`
       });
 
       return { session: session.id };
