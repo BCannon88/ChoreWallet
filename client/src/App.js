@@ -43,7 +43,7 @@ const client = new ApolloClient({
 
 export const App = () => {
 
-   const [dateState, setDateState] = useState(new Date())
+  const [dateState, setDateState] = useState(new Date())
 
   return (
     <ApolloProvider client={client}>
@@ -70,12 +70,13 @@ export const App = () => {
             <Route exact path="/">
               <Homepage />
             </Route>
+
            <Route exact path="/calendar">
              <Calendar 
                 value={dateState}
                 onChange={setDateState}
               />
-                <p>Current selected date is <b>{moment(dateState).format('MMMM Do YYYY')}</b></p>
+              <p>Current selected date is <b>{moment(dateState).format('MMMM Do YYYY')}</b></p>
             </Route>
 
           </Switch>
