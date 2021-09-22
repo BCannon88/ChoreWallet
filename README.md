@@ -19,11 +19,13 @@
        
    ## Installation
 
-    After cloning the repo, do an npm i in both client and server and download all dependicies listed in the package.json       
+    After cloning the repo, do an npm i in both client and server and download all dependicies listed in the package.json
+    Use npm run seed to add the seeded chore data.
+    Finally, use npm run develop to run the application.
 
    ## Usage
 
-    Used to track and pay chores and there completion status       
+    Used to track and pay chores and there completion status 
 
    ## Credits
 
