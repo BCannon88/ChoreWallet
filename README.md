@@ -5,7 +5,7 @@
 
   ## Description
 
-  ## An application built to help parents track chores that need to be completed as well as pay out allowances for completed chores
+  ## Welcome to ChoreWallet! An application built to help parents track chores that need to be completed as well as pay out allowances for completed chores. Parents can sign up with an email and password and assign to their children any of our various chores listed on the website. After completion of an assigned chore by the deadline, the child can select "Done" on that chore to receive payment electronically.
 
   ## Table of Contents        
    * [Installation](#Installation)
@@ -23,7 +23,7 @@
 
    ## Credits
 
-    Hunter Johnson, Charity Rodgers, Will Takes and Baron Cannon       
+    Hunter Johnson, Charity Rogers, William Takes and Baron Cannon       
 
    ## License
 
@@ -39,7 +39,15 @@
 
    ## Contributing
 
-    Links to contributors github:       
+    Links to contributors github: 
+    
+    Baron Cannon: http://github.com/BCannon88
+    
+    Hunter Johnson: https://github.com/Trayehunter1
+    
+    Charity Rogers: http://github.com/rogerscl116
+    
+    William Takes: https://github.com/Takes101
 
    ## Test
 
