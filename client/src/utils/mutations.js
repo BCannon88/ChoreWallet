@@ -24,3 +24,18 @@ export const ADD_USER = gql`
   }
 `;
 
+export const ADD_CHORE = gql`
+  mutation addChore($id: ID!) {
+    addChore(_id: $id) {
+      _id
+      name
+      description
+      price
+      choreLocation {
+        _id
+        name
+      }
+    }
+  }
+`;
+
