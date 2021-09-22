@@ -60,8 +60,8 @@ function Signup(props) {
             Already registered? <Link to="/login"><Button>Login</Button></Link>
           </em>
         </fieldset>
+        {error && <div>Signup failed</div>}
       </Form>
-      {error && <div>Signup failed</div>}
       </div>
     );
   }

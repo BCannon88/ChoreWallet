@@ -62,8 +62,8 @@ export default function Login() {
             Not registered? <Link className='margin' to="/signup"><Button>Signup</Button></Link>
           </em>
         </fieldset>
+        {error && <div>Login failed</div>}
       </Form>
-      {error && <div>Login failed</div>}
     </div>
   );
 }
