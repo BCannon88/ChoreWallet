@@ -1,8 +1,8 @@
 import gql from 'graphql-tag';
 
 export const QUERY_CHORES = gql`
-  query chores($email: String) {
-    chores(email: $email) {
+  query chores {
+    chores {
       _id
       name
       description

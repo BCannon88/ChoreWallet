@@ -11,7 +11,11 @@
         height: 50em;
         top: 200px;
     }
-    
+
     .margin {
         margin: 2em;
+    }
+
+    .form-group {
+        padding: 0.5em;
     }

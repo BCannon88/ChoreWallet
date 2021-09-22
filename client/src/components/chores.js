@@ -1,4 +1,5 @@
 import React from 'react';
+import { Button } from 'reactstrap';
 import { QUERY_CHORES } from '../utils/queries';
 import { useQuery } from '@apollo/client';
 
@@ -11,8 +12,12 @@ const Chores = () => {
   return (
     <div>
       <h3>Chores</h3>
-        <div chores={chores} />
-          </div>
+      {chores.map(chore => (
+        <div>
+        <p>{chore.description}<Button>Add</Button></p>
+        </div>
+      ))}
+    </div>
   );
 };
 

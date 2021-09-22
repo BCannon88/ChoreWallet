@@ -44,7 +44,7 @@ export default function Login() {
   };
 
   return (
-    <div className='loginImage'> 
+    <div className='loginImage'>
       <Form onSubmit={handleFormSubmit}>
         <fieldset>
           <FormGroup>
