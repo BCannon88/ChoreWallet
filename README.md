@@ -3,6 +3,10 @@
 
   <img src="https://img.shields.io/badge/mybadge-MIT-blue" alt="badge with license name"/>
 
+  ![Screenshot (81)](https://user-images.githubusercontent.com/81123612/134434088-3bf7755b-5b05-4cf7-9604-b0057b22a50c.png)
+
+  ![Screenshot (82)](https://user-images.githubusercontent.com/81123612/134434120-1b663ff3-628b-4d99-b815-52f7f89790ba.png)
+
   ## Description
 
   ## Welcome to ChoreWallet! An application built to help parents track chores that need to be completed as well as pay out allowances for completed chores. Parents can sign up with an email and password and assign to their children any of our various chores listed on the website. After completion of an assigned chore by the deadline, the child can select "Done" on that chore to receive payment electronically.
