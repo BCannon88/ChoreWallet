@@ -33,7 +33,7 @@ const typeDefs = gql`
 
   type Query {
     me: User
-    chores(email: String): [Chore]
+    chores: [Chore]
     chore(_id: ID!): Chore
     choreLocations: [ChoreLocation]
     choreLocation(_id: ID!): ChoreLocation
