@@ -2,6 +2,7 @@ import React from 'react';
 import { Button } from 'reactstrap';
 import { QUERY_CHORES } from '../utils/queries';
 import { useQuery } from '@apollo/client';
+import './chores.css';
 
 const Chores = () => {
     // use use Query hook to make query request
@@ -10,8 +11,8 @@ const Chores = () => {
     const chores = data?.chores || [];
 
   return (
-    <div>
-      <h3>Chores</h3>
+    <div className="choreImage">
+      <h3 className="font">Chores</h3>
       {chores.map(chore => (
         <div>
         <p>{chore.description}<Button>Add</Button></p>
