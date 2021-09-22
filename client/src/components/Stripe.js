@@ -1,5 +1,6 @@
 import { CardElement, useStripe, useElements, Elements } from '@stripe/react-stripe-js';
 import { loadStripe } from '@stripe/stripe-js';
+import './stripe.css';
 
 const asyncStripe = loadStripe('pk_test_TYooMQauvdEDq54NiTphI7jx')
 
@@ -29,7 +30,7 @@ const CheckoutForm = () => {
     }
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form className="stripeDesign" onSubmit={handleSubmit}>
             <CardElement />
             <button type="submit" disabled={!stripe}>
                 Make a Payment
