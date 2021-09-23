@@ -3,9 +3,9 @@
 
   <img src="https://img.shields.io/badge/mybadge-MIT-blue" alt="badge with license name"/>
 
-  ![Screenshot (81)](https://user-images.githubusercontent.com/81123612/134434088-3bf7755b-5b05-4cf7-9604-b0057b22a50c.png)
+  ![Homepage Screenshot (82)](./client/src/assets/chorewallet-homepage.jpg)
 
-  ![Screenshot (82)](https://user-images.githubusercontent.com/81123612/134434120-1b663ff3-628b-4d99-b815-52f7f89790ba.png)
+  ![Chores page Screenshot (82)](./client/src/assets/chorewallet-chorespage.jpg)
 
   ## Description
 
@@ -19,13 +19,13 @@
        
    ## Installation
 
-    After cloning the repo, do an npm i in both client and server and download all dependicies listed in the package.json
-    Use npm run seed to add the seeded chore data.
+    After cloning the repo, enter npm i in both client and server and download all dependicies listed in the package.json
+    Enter npm run seed to add the seeded chore data.
     Finally, use npm run develop to run the application.
 
    ## Usage
 
-    Used to track and pay chores and there completion status 
+    Used to track and pay chores and their completion status 
 
    ## Credits
 
