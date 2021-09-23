@@ -20,7 +20,7 @@
    ## Installation
 
     After cloning the repo, enter npm i in both client and server and download all dependicies listed in the package.json
-    Enter npm run seed to add the seeded chore data.
+    Use npm run seed to add the seeded chore data.
     Finally, use npm run develop to run the application.
 
    ## Usage
