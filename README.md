@@ -38,9 +38,6 @@
    ## Badges
 
    <img src="https://img.shields.io/badge/mybadge-MIT-blue" alt="badge with license name"/>      
- 
-   ## Features
-
            
 
    ## Contributing
@@ -55,7 +52,6 @@
     
     William Takes: https://github.com/Takes101
 
-   ## Test
 
         
     
