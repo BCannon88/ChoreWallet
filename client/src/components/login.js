@@ -1,40 +1,69 @@
 import React, { useState } from "react";
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
-//import { useHistory } from "react-router-dom";
-
+import { Link } from 'react-router-dom';
+import { useMutation } from '@apollo/client';
+import { LOGIN_USER } from '../utils/mutations';
+import Auth from '../utils/auth';
+import './login.css';
 
 export default function Login() {
   //const history = useHistory();
 
-  const [email, setEmail] = useState();
-  const [password, setPassword] = useState();
+  const [formState, setFormState] = useState({ email: '', password: '' });
+  const [login, { error }] = useMutation(LOGIN_USER);
 
-//   const loginSubmit = (e) => {
-//     e.preventDefault();
-//     login(email, password)
-//       .then(() => history.push("/"))
-//       .catch(() => alert("Invalid email or password"));
-//   };
+  // update state based on form input changes
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+  
+    setFormState({
+      ...formState,
+      [name]: value,
+    });
+  };
+
+  // submit form
+  const handleFormSubmit = async (event) => {
+    event.preventDefault();
+
+    try {
+      const { data } = await login({
+        variables: { ...formState }
+      });
+
+      Auth.login(data.login.token);
+    } catch (e) {
+      console.error(e);
+    }
+
+    // clear form values
+    setFormState({
+      email: '',
+      password: '',
+    });
+  };
 
   return (
-    <Form>
-      <fieldset>
-        <FormGroup>
-          <Label for="email">Email</Label>
-          <Input id="email" type="text" autoFocus onChange={e => setEmail(e.target.value)} />
-        </FormGroup>
-        <FormGroup>
-          <Label for="password">Password</Label>
-          <Input id="password" type="password" onChange={e => setPassword(e.target.value)} />
-        </FormGroup>
-        <FormGroup>
-          <Button>Login</Button>
-        </FormGroup>
-        <em>
-          Not registered? <Button>Register</Button> 
-        </em>
-      </fieldset>
-    </Form>
+    <div className='loginImage'>
+      <Form onSubmit={handleFormSubmit}>
+        <fieldset>
+          <FormGroup>
+            <Label className='margin' for="email">Email</Label>
+            <Input id="email" name="email" type="text" autoFocus onChange={handleChange} />
+          </FormGroup>
+          <FormGroup>
+            <Label className='margin' for="password">Password</Label>
+            <Input id="password" name="password" type="password" onChange={handleChange} />
+          </FormGroup>
+          <FormGroup className='margin'>
+            <Button>Login</Button>
+          </FormGroup>
+          <em>
+            Not registered? <Link className='margin' to="/signup"><Button>Signup</Button></Link>
+          </em>
+        </fieldset>
+        {error && <div>Login failed</div>}
+      </Form>
+    </div>
   );
 }
-
